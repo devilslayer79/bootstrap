@@ -1,6 +1,7 @@
 .bd-subnavbar {
-  --bs-gutter-x: $bd-gutter-x;
-  --bs-gutter-y: $bd-gutter-x;
+  .container-xxl {
+    --bs-gutter-x: #{$bd-gutter-x};
+  }
 
   // The position and z-index are needed for the dropdown to stay on top of the content
   position: relative;
