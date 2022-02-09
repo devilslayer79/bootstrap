@@ -250,6 +250,25 @@ As part of Bootstrap's evolving CSS variables approach, buttons now use local CS
 
 Each `.btn-*` modifier class updates the appropriate CSS variables to minimize additional CSS rules with our `button-variant()`, `button-outline-variant()`, and `button-size()` mixins.
 
+Here's an example of building a custom `.btn-*` modifier class like we do for the buttons unique to our docs by reassigning Bootstrap's CSS variables with a mixture of our own CSS and Sass variables.
+
+<div class="bd-example">
+  <button type="button" class="btn btn-bd-primary">Custom button</button>
+</div>
+
+```scss
+.btn-bd-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet);
+  --bs-btn-border-color: var(--bd-violet);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #{shade-color($bd-violet, 20%)};
+  --bs-btn-hover-border-color: #{shade-color($bd-violet, 20%)};
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+}
+```
+
 ### Sass variables
 
 {{< scss-docs name="btn-variables" file="scss/_variables.scss" >}}
